@@ -1,0 +1,117 @@
+/* 2K Resolution Optimization (2560x1440 and above) */
+
+/* Custom breakpoints for 2K and 4K displays */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1760px !important;
+  }
+
+  /* Larger text for high DPI displays */
+  html {
+    font-size: 110%;
+  }
+}
+
+@media (min-width: 2560px) {
+  .container {
+    max-width: 2200px !important;
+  }
+
+  /* Even larger text for 2K displays */
+  html {
+    font-size: 120%;
+  }
+
+  /* More spacing between elements */
+  .gap-1 { gap: 0.5rem; }
+  .gap-2 { gap: 1rem; }
+  .gap-3 { gap: 1.25rem; }
+  .gap-4 { gap: 1.5rem; }
+  .gap-6 { gap: 2rem; }
+
+  /* Larger padding for widgets */
+  .p-2 { padding: 0.75rem; }
+  .p-3 { padding: 1rem; }
+  .p-4 { padding: 1.5rem; }
+  .p-6 { padding: 2rem; }
+
+  /* Adjust widget grid to use more columns */
+  .react-grid-layout {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 3840px) {
+  .container {
+    max-width: 3400px !important;
+  }
+
+  html {
+    font-size: 135%;
+  }
+
+  /* 4K displays - 6 column grid */
+  .react-grid-layout {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* Ensure widgets don't become too wide on large screens */
+@media (min-width: 1920px) {
+  .react-grid-item {
+    max-width: 100%;
+  }
+
+  /* Smooth scaling for widget content */
+  .widget-content {
+    font-size: 0.9em;
+    transition: font-size 0.2s ease;
+  }
+}
+
+/* Optimize scrollbar for large screens */
+@media (min-width: 1920px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+  }
+}
+
+/* Adjust LED font size for high DPI displays */
+@media (min-width: 1920px) {
+  .font-digital {
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+  }
+}
+
+@media (min-width: 2560px) {
+  .font-digital {
+    font-size: 1.4em;
+    letter-spacing: 0.12em;
+  }
+}
+
+/* Improve touch targets on large displays */
+@media (min-width: 1920px) {
+  button, .cursor-pointer {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Optimize for ultra-wide monitors (21:9 aspect ratio) */
+@media (min-width: 3440px) and (max-aspect-ratio: 2.5/1) {
+  .container {
+    max-width: 2800px !important;
+  }
+
+  /* Ultra-wide grid optimization */
+  .react-grid-layout {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
